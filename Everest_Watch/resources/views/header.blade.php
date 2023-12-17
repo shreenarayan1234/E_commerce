@@ -7,9 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Add custom styles here */
-        .navbar {
-            background-color: #3498db; /* Set background color */
-        }
+        /* .navbar {
+            background-color: #257ab3; /* Set background color */
+        } */
 
         .navbar-brand, .navbar-nav .nav-link {
             color: #ffffff; /* Set text color */
@@ -24,7 +24,7 @@
         }
 
         .navbar-nav .nav-item.active, .navbar-nav .nav-item:hover {
-            background-color: #2980b9; /* Set background color for active/hover state */
+            background-color: gray; /* Set background color for active/hover state */
         }
 
         .form-control {
@@ -45,7 +45,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">EVEREST WATCH</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,22 +54,22 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">HOME</a>
+                    <a class="nav-link active text-light" href="#">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">FOR MEN</a>
+                    <a class="nav-link text-light" href="#">FOR MEN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">FOR LADIES</a>
+                    <a class="nav-link text-light" href="#">FOR LADIES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">UPCOMMING</a>
+                    <a class="nav-link text-light" href="#">UPCOMMING</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ABOUT US</a>
+                <li class="nav-item text-light">
+                    <a class="nav-link text-light" href="#">ABOUT US</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT</a>
+                <li class="nav-item text-light">
+                    <a class="nav-link text-light" href="#">CONTACT</a>
                 </li>
             </ul>
             <form class="d-flex ms-auto">
@@ -78,7 +78,7 @@
             </form>
             <ul class="navbar-nav ms-2">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link text-light" href="#">
                         <i class="bi bi-cart"></i> Cart
                     </a>
                 </li>

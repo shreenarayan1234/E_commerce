@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsFormController;
+use App\Models\Products;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +21,10 @@ Route::get('/login', function () {
 });
 Route::post('/login',[UserController::class,'login']);
 Route::get('/',[ProductController::class,'index']);
+Route::get('/products',function(){
+    $products = Products::all();
+    echo "<pre>";
+    print_r($products->toArray());
+});
+Route::get('/productsform', [ProductsFormController::class,'index']);
+Route::post('/productsform',[ProductsFormController::class,'store']);
