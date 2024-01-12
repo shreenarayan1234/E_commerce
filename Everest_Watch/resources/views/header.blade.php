@@ -1,3 +1,11 @@
+<?php
+    use App\Http\Controllers\ProductController;
+    $total = 0;
+    if(Session::has('user'))
+    {
+        $total = ProductController::cartItem();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +55,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">EVEREST WATCH</a>
+        <a class="navbar-brand" href="/">EVEREST WATCH</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -72,16 +80,28 @@
                     <a class="nav-link text-light" href="#">CONTACT</a>
                 </li>
             </ul>
-            <form class="d-flex ms-auto">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form action="{{url('/')}}/search" class="d-flex ms-auto">
+                <input class="form-control me-2 search-box" name="query" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul class="navbar-nav ms-2">
                 <li class="nav-item">
                     <a class="nav-link text-light" href="#">
-                        <i class="bi bi-cart"></i> Cart
+                     Cart({{$total}})
                     </a>
                 </li>
+                @if (Session::has('user'))
+                    <li class="nav-item dropdown mt-2">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Session::get('user')['user_name'] }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                @else
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                @endif
             </ul>
         </div>
     </div>

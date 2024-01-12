@@ -4,12 +4,14 @@
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       @foreach ($product as $key => $item)
+       <a href="detail/{{$item['id']}}">
         <div class="carousel-item {{$key == 0 ? 'active' : ''}}">
           <img src="{{asset('storage/images/'.$item->gallery)}}" class="d-block w-100" alt="..." style="height: 400px;">
           <div class="carousel-caption slider-text">
             <h3>{{$item->name}}</h3>
             <p>{{$item->description}}</p>
           </div>
+      </a>
         </div>
       @endforeach
     </div>
@@ -17,10 +19,12 @@
       <h2>Trending Watch</h2>
       @foreach ($product as $item)
       <div class="trading-item">
+        <a href="detail/{{$item['id']}}">
         <img src="{{asset('storage/images/'.$item->gallery)}}" alt="..." class="tranding-image">
         <div class="">
           <h3 class="text-center">{{$item->name}}</h3>
         </div>
+        </a>
       </div>
     @endforeach
   </div>

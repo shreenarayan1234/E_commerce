@@ -14,7 +14,7 @@ class UserController extends Controller
         if (!$user || $req->password !== $user->password) {
             return "Username or Password is not matched";
         } else {
-            $req->session()->put('user', $user);
+            $req->session()->put('user', $user); //creating session 'user'
             return redirect('/');
         }
     }
