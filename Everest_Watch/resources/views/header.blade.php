@@ -86,7 +86,7 @@
             </form>
             <ul class="navbar-nav ms-2">
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">
+                    <a class="nav-link text-light" href="/cartlist">
                      Cart({{$total}})
                     </a>
                 </li>

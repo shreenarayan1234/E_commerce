@@ -42,7 +42,7 @@
             padding-top: 100px
         }
         .user-product{
-            height: 600px;
+            min-height: 600px;
         }
         .slider-text{
             color: black;
@@ -63,6 +63,11 @@
         }
         .search-box{
             width: 15rem;
+        }
+        .cart-list-devider{
+            border-bottom: 1px solid #cccccc;
+            margin-bottom: 20px;
+            padding-bottom: 2opx;
         }
     </style>
 </html>
