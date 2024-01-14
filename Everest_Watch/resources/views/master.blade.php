@@ -65,7 +65,7 @@
             width: 15rem;
         }
         .cart-list-devider{
-            border-bottom: 1px solid #cccccc;
+            border-bottom: 2px solid #cccccc;
             margin-bottom: 20px;
             padding-bottom: 2opx;
         }

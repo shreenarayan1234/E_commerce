@@ -6,6 +6,7 @@
             <div class="col-12">
                 <div class="trending-wrapper">
                     <h2>Your Selected Watches</h2>
+                    <a class="btn btn-success" href="ordernow">Order Now</a><br><br>
                     @foreach ($products as $item)
                     <div class="row searched-item cart-list-devider">
                         <div class="col-md-3">
