@@ -77,7 +77,7 @@
                     <a class="nav-link text-light" href="#">ABOUT US</a>
                 </li>
                 <li class="nav-item text-light">
-                    <a class="nav-link text-light" href="#">CONTACT</a>
+                    <a class="nav-link text-light" href="/myorders">ORDERS</a>
                 </li>
             </ul>
             <form action="{{url('/')}}/search" class="d-flex ms-auto">
@@ -101,6 +101,7 @@
                     </li>
                 @else
                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
                 @endif
             </ul>
         </div>

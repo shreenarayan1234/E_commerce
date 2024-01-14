@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -11,11 +12,23 @@ class UserController extends Controller
     {
         $user = User::where(['email' => $req->email])->first();
         
-        if (!$user || $req->password !== $user->password) {
+        if (!$user || !Hash::check($req->password, $user->password)) {
             return "Username or Password is not matched";
         } else {
-            $req->session()->put('user', $user); //creating session 'user'
+            $req->session()->put('user', $user); // creating session 'user'
             return redirect('/');
         }
+    }
+
+    function register(Request $req)
+    {
+        // return $req->input();
+        $user = new User;
+        $user->user_name = $req->name;
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
+        $user->save();
+
+        return redirect('/login');
     }
 }
