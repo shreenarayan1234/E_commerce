@@ -23,15 +23,16 @@
             </tbody>
           </table>
           <div>
-            <form>
+            <form action="/orderplace" method="POST">
+                @csrf
                 <div class="mb-3">
-                  <textarea type="text" class="form-control" placeholder="enter your address"></textarea>
+                  <textarea name="address" class="form-control" placeholder="enter your address"></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Payment Method</label><br><br>
-                  <input type="radio" name="payment"><span>online payment</span><br><br>
-                  <input type="radio" name="payment"><span>E-Sewa</span><br><br>
-                  <input type="radio" name="payment"><span>Payment On Delivery</span><br><br>
+                  <input type="radio" value="cash" name="payment"><span>online payment</span><br><br>
+                  <input type="radio" value="cash" name="payment"><span>E-Sewa</span><br><br>
+                  <input type="radio" value="cash" name="payment"><span>Payment On Delivery</span><br><br>
                 </div>
                 <button type="submit" class="btn btn-primary">Order Now</button>
               </form>
