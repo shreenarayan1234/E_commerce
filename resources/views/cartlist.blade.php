@@ -19,6 +19,8 @@
                                 <div>
                                     <h2>{{$item->name}}</h2>
                                     <h5>{{$item->description}}</h5>
+                                    <p>Quantity: {{$item->quantity}}</p>
+                                    <p>Total Price: {{$item->quantity * $item->price}}</p>
                                 </div>
                             </a>
                         </div>

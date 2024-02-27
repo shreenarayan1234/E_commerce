@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsFormController;
+use App\Http\Controllers\AdminController;
 use App\Models\Products;
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,7 @@ Route::get('/products',function(){
     echo "<pre>";
     print_r($products->toArray());
 });
-Route::get('/productsform', [ProductsFormController::class,'index']);
-Route::post('/productsform',[ProductsFormController::class,'store']);
+
 Route::get('detail/{id}',[ProductController::class,'detail']);
 Route::get('search',[ProductController::class,'search']);
 Route::post('add_to_cart',[ProductController::class,'addToCart']);
@@ -42,4 +42,27 @@ Route::get('removecart/{id}',[ProductController::class,'removeCart']);
 Route::get('ordernow',[ProductController::class,'orderNow']);
 Route::post('orderplace',[ProductController::class,'orderPlace']);
 Route::get('myorders',[ProductController::class,'myOrders']);
+
+Route::get('/ourwatch',[ProductController::class,'ourwatch']);
+Route::get('/aboutus', function(){
+    return view('aboutus');
+} );
+
+Route::get('/upcomming', function(){
+    return view('upcomming');
+});
+
+
+//Dashboard Work (BackEnd)
+
+Route::get('/admin',[AdminController::class,'index']);
+Route::get('/adminProducts',[AdminController::class,'products']);
+Route::get('/ourCustomers',[AdminController::class,'customers']);
+Route::get('/ourOrders',[AdminController::class,'orders']);
+Route::get('/changeOrderStatus/{payment_status}/{id}',[AdminController::class,'changeOrderStatus']);
+Route::get('/deleteProduct/{id}',[ProductsFormController::class,'deleteProduct']);
+Route::get('/deleteUser/{id}',[AdminController::class,'deleteUser']);
+Route::get('/productsform', [ProductsFormController::class,'index']);
+Route::post('/productsform',[ProductsFormController::class,'store']); //Adding new products
+Route::post('/UpdateProduct',[ProductsFormController::class,'UpdateProduct']); //Updating products
 

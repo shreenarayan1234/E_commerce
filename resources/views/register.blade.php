@@ -6,6 +6,9 @@
             <form action="{{url('/')}}/register" method="POST">
               @csrf
               <div class="mb-3">
+                <input type="hidden" name="id" class="form-control"/>
+              </div>
+              <div class="mb-3">
                 <label class="form-label">User Name </label>
                 <input type="text" name="name" class="form-control" placeholder="User name">
               </div>

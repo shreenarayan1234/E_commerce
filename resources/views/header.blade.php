@@ -55,26 +55,23 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">EVEREST WATCH</a>
+    <h1><a class="navbar-brand" href="/"><strong>EVEREST WATCH</strong></a></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active text-light" href="#">HOME</a>
+                    <a class="nav-link active text-light" href="/">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">FOR MEN</a>
+                    <a class="nav-link text-light" href="/ourwatch">OUR WATCHES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">FOR LADIES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="#">UPCOMMING</a>
+                    <a class="nav-link text-light" href="/upcomming">UPCOMMING</a>
                 </li>
                 <li class="nav-item text-light">
-                    <a class="nav-link text-light" href="#">ABOUT US</a>
+                    <a class="nav-link text-light" href="/aboutus">ABOUT US</a>
                 </li>
                 <li class="nav-item text-light">
                     <a class="nav-link text-light" href="/myorders">ORDERS</a>
@@ -100,8 +97,8 @@
                         </ul>
                     </li>
                 @else
-                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login"><strong>Login</strong></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/register"><strong>Register</strong></a></li>
                 @endif
             </ul>
         </div>

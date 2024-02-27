@@ -26,7 +26,11 @@
             <form action="/orderplace" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <textarea name="address" class="form-control" placeholder="enter your address"></textarea>
+                  <label for="form-label">Mobile Number  </label><br/>
+                  <input type="phone" name="phone_no" placeholder="Your mobile number">
+                </div>     
+                <div class="mb-3">
+                  <textarea name="address" class="form-control" placeholder="enter your address full details"></textarea>
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Payment Method</label><br><br>

@@ -36,6 +36,8 @@ class ProductController extends Controller
             $cart = new Cart;
             $cart->user_id = $req->session()->get('user')['id']; // Update to use 'id' instead of 'user_id'
             $cart->product_id = $req->product_id;
+            $cart->quantity = $req->quantity;
+            $cart->total_price = $req->total_price;
             $cart->save();
             return redirect('/');
         } else {
@@ -87,9 +89,10 @@ class ProductController extends Controller
             $order = new Order;
             $order->product_id = $cart->product_id; // Update to use '->' instead of ['']
             $order->user_id = $cart->user_id; // Update to use '->' instead of ['']
+            $order->phone_no =$req->phone_no;
             $order->status = "pending";
             $order->payment_method = $req->payment;
-            $order->payment_status = "pending";
+            $order->payment_status = "Paid";
             $order->address = $req->address;
             $order->save();
         }
@@ -107,5 +110,11 @@ class ProductController extends Controller
             ->get();
 
         return view('myorders', ['orders' => $orders]); // Update variable name to 'orders'
+    }
+
+    function ourwatch()
+    {
+        $data = Products::all();
+        return view('ourwatch', ['product' => $data]);
     }
 }
