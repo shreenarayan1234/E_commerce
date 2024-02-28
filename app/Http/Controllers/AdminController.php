@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Support\Facades\DB;
 
 
@@ -32,11 +33,16 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Congratulation!  Customer Listing Deleted Successfully');
     }
     public function orders(){
-        $orders = DB::table('users')
+        // $orderItems = OrderItem::all();
+        $orderItems = DB::table('order_items')
+            ->join('products', 'order_items.product_id', '=', 'products.id')
+            ->select('products.name', 'products.gallery', 'order_items.*')
+            ->get();
+            $orders = DB::table('users')
             ->join('orders', 'users.id', '=', 'orders.user_id')
             ->select('orders.*', 'users.user_name', 'users.email')
             ->get();
-        return view('Dashboard.orders', compact('orders'));
+        return view('Dashboard.orders', compact('orders','orderItems'));
     }
     
     public function changeOrderStatus($status,$id){

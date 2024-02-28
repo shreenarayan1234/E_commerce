@@ -7,7 +7,7 @@
                 <div class="trending-wrapper">
                     <h2>Your Selected Watches</h2>
                     <a class="btn btn-success" href="ordernow">Order Now</a><br><br>
-                    @foreach ($products as $item)
+                    @foreach ($cartItems as $item)
                     <div class="row searched-item cart-list-devider">
                         <div class="col-md-3">
                             <a href="detail/{{$item->id}}">
@@ -20,7 +20,7 @@
                                     <h2>{{$item->name}}</h2>
                                     <h5>{{$item->description}}</h5>
                                     <p>Quantity: {{$item->quantity}}</p>
-                                    <p>Total Price: {{$item->quantity * $item->price}}</p>
+                                    <p>Total Price: {{$item->total_price}}</p>
                                 </div>
                             </a>
                         </div>
