@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsFormController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\AdminController;
 use App\Models\Products;
 /*
@@ -66,3 +68,11 @@ Route::get('/productsform', [ProductsFormController::class,'index']);
 Route::post('/productsform',[ProductsFormController::class,'store']); //Adding new products
 Route::post('/UpdateProduct',[ProductsFormController::class,'UpdateProduct']); //Updating products
 
+
+// Stripe Route
+
+Route::get('/paymentstripe', [PaymentController::class, 'index'])->name('payment.index');
+Route::post('/payment', [PaymentController::class, 'payment'])->name('payment.payment');
+Route::post('/checkout',[StripePaymentController::class,'checkout']);
+Route::post('/success',[StripePaymentController::class,'success'])->name('success');
+Route::post('/cancelled',[StripePaymentController::class,'cancelled'])->name('cancelled');

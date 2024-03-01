@@ -73,19 +73,6 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="ti-settings mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
                   <div class="preview-icon bg-info">
                     <i class="ti-user mx-0"></i>
                   </div>
@@ -104,10 +91,6 @@
               <img src="Dashboard/images/profile1.jpg" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
-                <i class="ti-settings text-primary"></i>
-                Settings
-              </a>
               <a class="dropdown-item" href="{{URL::to('logout')}}">
                 <i class="ti-power-off text-primary"></i>
                 Logout
@@ -234,7 +217,7 @@
             <div class="events pt-4 px-3">
               <div class="wrapper d-flex mb-2">
                 <i class="ti-control-record text-primary mr-2"></i>
-                <span>Feb 7 2018</span>
+                <span>Feb 7 2024</span>
               </div>
               <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
               <p class="text-gray mb-0 ">Call Sarah Graves</p>
@@ -367,7 +350,6 @@
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{URL::to('logout')}}"> Logout </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Profile </a></li>
               </ul>
             </div>
           </li>

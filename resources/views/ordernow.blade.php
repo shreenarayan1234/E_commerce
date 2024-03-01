@@ -23,7 +23,7 @@
             </tbody>
           </table>
           <div>
-            <form action="{{URL::to('orderplace')}}" method="POST">
+            <form action="/payment" method="POST">
                 @csrf
                 <div class="mb-3">
                   <label for="form-label">Mobile Number  </label><br/>

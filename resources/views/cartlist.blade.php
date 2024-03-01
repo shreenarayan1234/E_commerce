@@ -7,6 +7,11 @@
                 <div class="trending-wrapper">
                     <h2>Your Selected Watches</h2>
                     <a class="btn btn-success" href="ordernow">Order Now</a><br><br>
+                         <form action="/checkout" method="post">
+                            @csrf
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <button type="submit">Order Now</button><br><br>
+                    </form> 
                     @foreach ($cartItems as $item)
                     <div class="row searched-item cart-list-devider">
                         <div class="col-md-3">
