@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsFormController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\WebHookController;
 use App\Http\Controllers\AdminController;
 use App\Models\Products;
 /*
@@ -71,8 +72,11 @@ Route::post('/UpdateProduct',[ProductsFormController::class,'UpdateProduct']); /
 
 // Stripe Route
 
-Route::get('/paymentstripe', [PaymentController::class, 'index'])->name('payment.index');
-Route::post('/payment', [PaymentController::class, 'payment'])->name('payment.payment');
+// Route::get('/paymentstripe', [PaymentController::class, 'index'])->name('payment.index');
+// Route::post('/payment', [PaymentController::class, 'payment'])->name('payment.payment');
+
 Route::post('/checkout',[StripePaymentController::class,'checkout']);
 Route::post('/success',[StripePaymentController::class,'success'])->name('success');
 Route::post('/cancelled',[StripePaymentController::class,'cancelled'])->name('cancelled');
+
+Route::post('/webhook',[WebHookController::class,'paymentSuccess'])->name('webhook');

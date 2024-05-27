@@ -6,7 +6,7 @@
             <div class="col-12">
                 <div class="trending-wrapper">
                     <h2>Your Selected Watches</h2>
-                    <a class="btn btn-success" href="ordernow">Order Now</a><br><br>
+                    <!-- <a class="btn btn-success" href="ordernow">Order Now</a><br><br> -->
                          <form action="/checkout" method="post">
                             @csrf
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
